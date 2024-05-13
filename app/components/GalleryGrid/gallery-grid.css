@@ -1,0 +1,17 @@
+.gallery-container {
+  column-count: 4;
+}
+
+/* Media query for tablets */
+@media screen and (max-width: 768px) {
+  .gallery-container {
+    column-count: 3;
+  }
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+  .gallery-container {
+    column-count: 2;
+  }
+}
