@@ -1,6 +1,6 @@
 import { Icon } from "@chakra-ui/react";
 
-interface IconInterface {
+export interface IconInterface {
   iconSize?: string | number;
   iconColor?: string;
 }

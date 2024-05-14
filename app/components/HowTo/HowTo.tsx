@@ -1,13 +1,13 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
-interface Instructions {
+export interface Instructions {
   imageUrl: string;
   instructionTitle: string;
   instructionDesc: string;
 }
 
-interface HowTo {
+export interface HowToProps {
   bg: string;
   sectionHeader: string;
   sectionSubHeader: string;
@@ -18,7 +18,7 @@ const HowTo = ({
   sectionHeader,
   sectionSubHeader,
   instructions,
-}: HowTo) => {
+}: HowToProps) => {
   return (
     <Box>
       <Box
@@ -61,12 +61,13 @@ const HowTo = ({
         gap={16}
         p={{ base: 10, md: 20 }}
       >
-        {instructions.map((instruction) => (
+        {instructions.map((instruction, index) => (
           <Box
             display={"flex"}
             flexDirection={"column"}
             gap={8}
             justifyContent={"flex-start"}
+            key={index}
           >
             <Image src={instruction.imageUrl} />
             <Text fontSize={"3xl"} textAlign={"center"}>

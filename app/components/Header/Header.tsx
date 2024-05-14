@@ -21,7 +21,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { hoverStyle } from "../../utils/hoverStyle";
 
-interface HeaderLinks {
+export interface HeaderLinks {
   headerTitle: string;
   expandable: boolean;
   detailedContent?: React.ReactNode | React.ReactElement;
@@ -29,12 +29,12 @@ interface HeaderLinks {
   mobileBg: string;
 }
 
-interface SupportLinks {
+export interface SupportLinks {
   supportTitle: string;
   supportIcon: React.ReactNode | React.ReactElement;
 }
 
-interface HeaderInterface {
+export interface HeaderInterface {
   bg: string;
   headerLinks: HeaderLinks[];
   supportLinks?: SupportLinks[];
@@ -246,7 +246,7 @@ const Header = ({ bg, headerLinks, supportLinks }: HeaderInterface) => {
                         h={24}
                         bg={link.mobileBg}
                         gap={2}
-                        key={index}
+                        key={`header ${index}`}
                       >
                         {link.mobileIcon}
                         {link.headerTitle}
@@ -271,7 +271,7 @@ const Header = ({ bg, headerLinks, supportLinks }: HeaderInterface) => {
                           borderBottom={"1px dotted white"}
                           w={"full"}
                           p={4}
-                          key={index}
+                          key={`support ${index}`}
                         >
                           {link.supportIcon}
                           <Button

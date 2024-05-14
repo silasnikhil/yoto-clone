@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Box, Image } from "@chakra-ui/react";
 import "./logo-carousel.css";
 
-interface LogoCarouselProps {
+export interface LogoCarouselProps {
   logos: string[];
 }
 
@@ -27,7 +27,7 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({ logos }) => {
       overflow="hidden"
       position="relative"
       h={{base: 225, md: 300}}
-      bg="gray.100"
+      bg="white"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       p={{ base: 10, md: 20 }}

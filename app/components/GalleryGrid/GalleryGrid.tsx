@@ -3,11 +3,11 @@ import React from "react";
 import "./gallery-grid.css";
 import { YotoLove } from "../Icons/Icons";
 
-interface GalleryImageInterface {
+export interface GalleryImageInterface {
   imgUrl: string;
   imgCaption: string;
 }
-interface GalleryGridInterface {
+export interface GalleryGridInterface {
   images: GalleryImageInterface[];
   galleryTitle?: string;
 }
@@ -29,11 +29,12 @@ const GalleryGrid = ({ images, galleryTitle }: GalleryGridInterface) => {
           </>
         )}
         <UnorderedList className="gallery-container">
-          {images.map((image) => (
+          {images.map((image, index) => (
             <List
               justifyContent={"center"}
               alignItems={"center"}
               display={"flex"}
+              key={index}
               flexDirection={"column"}
               pb={8}
               gap={4}

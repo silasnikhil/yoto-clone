@@ -21,12 +21,12 @@ import { LuInstagram } from "react-icons/lu";
 import { IoLogoFacebook } from "react-icons/io5";
 import React from "react";
 
-interface NavLinks {
+export interface NavLinks {
   navHeader: string;
   navSubLinks: string[];
 }
 
-interface FooterInterface {
+export interface FooterInterface {
   navLinks: NavLinks[];
   legalLinks: string[];
 }
@@ -106,7 +106,7 @@ const Footer = ({ navLinks, legalLinks }: FooterInterface) => {
             borderTop={"1px dotted white"}
             pt={8}
           >
-            {legalLinks.map((legal) => (
+            {legalLinks.map((legal, index) => (
               <Text
                 color={"white"}
                 fontSize={"md"}
@@ -114,6 +114,7 @@ const Footer = ({ navLinks, legalLinks }: FooterInterface) => {
                 _hover={{
                   color: "#F45436",
                 }}
+                key={index}
               >
                 {legal}
               </Text>
@@ -151,18 +152,19 @@ const Footer = ({ navLinks, legalLinks }: FooterInterface) => {
           justifyContent={"center"}
           alignItems={"baseline"}
         >
-          {navLinks.map((nav) => (
+          {navLinks.map((nav, index) => (
             <Box
               display={"flex"}
               flexDirection={"column"}
               gap={2}
               justifyContent={"center"}
               alignItems={"flex-start"}
+              key={index}
             >
               <Text color={"white"} fontSize={"3xl"}>
                 {nav.navHeader}
               </Text>
-              {nav.navSubLinks.map((subLink) => (
+              {nav.navSubLinks.map((subLink, index) => (
                 <Text
                   color={"white"}
                   fontSize={"md"}
@@ -170,6 +172,7 @@ const Footer = ({ navLinks, legalLinks }: FooterInterface) => {
                   _hover={{
                     color: "#F45436",
                   }}
+                  key={index}
                 >
                   {subLink}
                 </Text>
@@ -217,7 +220,7 @@ const Footer = ({ navLinks, legalLinks }: FooterInterface) => {
             alignItems={"center"}
             justifyContent={"center"}
           >
-            {legalLinks.map((legal) => (
+            {legalLinks.map((legal, index) => (
               <Text
                 color={"white"}
                 fontSize={"md"}
@@ -225,6 +228,7 @@ const Footer = ({ navLinks, legalLinks }: FooterInterface) => {
                 _hover={{
                   color: "#F45436",
                 }}
+                key={index}
               >
                 {legal}
               </Text>

@@ -10,7 +10,11 @@ import {
 } from "@chakra-ui/react";
 import { MdOutlineStar } from "react-icons/md";
 
-export const ProductCard = ({ imageUrl, productTitle }) => {
+export interface ProductCardProps {
+  imageUrl: string;
+  productTitle: string;
+}
+export const ProductCard = ({ imageUrl, productTitle }: ProductCardProps) => {
   return (
     <Box
       display={"flex"}
@@ -40,7 +44,7 @@ export const ProductCard = ({ imageUrl, productTitle }) => {
   );
 };
 
-interface ProductDetailsProps {
+export interface ProductDetailsProps {
   imageUrl: string;
   productTitle: string;
   productAvailability: string;

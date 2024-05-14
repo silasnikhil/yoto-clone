@@ -3,7 +3,11 @@ import AwesomeSlider from "react-awesome-slider";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
 import "react-awesome-slider/dist/custom-animations/cube-animation.css";
 import "./carousel.css";
-export const Carousel = () => {
+
+export interface CarouselProps {
+  bannerUrl: string[];
+}
+export const Carousel = ({ bannerUrl }: CarouselProps) => {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
   return (
     <div className="carousel-cmp" data-testid="hero-carousel">
@@ -16,10 +20,9 @@ export const Carousel = () => {
         bullets={false}
         mobileTouch={true}
       >
-        <div data-src="/assets/banner2.avif" />
-        <div data-src="/assets/banner3.jpeg" />
-        <div data-src="/assets/banner4.jpeg" />
-        <div data-src="/assets/banner1.webp" />
+        {bannerUrl.map((banner, index) => (
+          <div data-src={banner} key={`banner ${index}`} />
+        ))}
       </AutoplaySlider>
     </div>
   );

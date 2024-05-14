@@ -2,7 +2,18 @@ import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import React, { useEffect, useRef, useState } from "react";
 import { FaRegCirclePlay } from "react-icons/fa6";
 
-const VideoSection = () => {
+export interface VideoSectionProps {
+  sectionTitle: string;
+  sectionErrorMsg: string;
+  playBtnText: string;
+  videoUrl: string;
+}
+const VideoSection = ({
+  sectionTitle,
+  sectionErrorMsg,
+  playBtnText,
+  videoUrl,
+}: VideoSectionProps) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -28,12 +39,12 @@ const VideoSection = () => {
         textAlign="center"
         marginBottom={4}
       >
-        Inspiring audio for life’s greatest adventure
+        {sectionTitle}
       </Text>
       <Box position="relative" width="100%">
         <video width="100%" controls ref={videoRef}>
-          <source src="/assets/yoto-player.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          <source src={videoUrl} type="video/mp4" />
+          {sectionErrorMsg}
         </video>
         {!isPlaying && (
           <Button
@@ -51,7 +62,7 @@ const VideoSection = () => {
             fontSize={"2xl"}
             borderRadius={20}
           >
-            Play Me
+            {playBtnText}
           </Button>
         )}
       </Box>
