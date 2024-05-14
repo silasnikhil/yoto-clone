@@ -16,6 +16,7 @@ export const homePageData: HomePageProps = {
     heroSubTitle:
       "Yoto Player puts kids safely in control of their listening, learning and play. No ads. No microphones.",
     primaryBtnText: "Buy Player",
+    navigateUrl: "/yoto-player",
     secondaryBtnText: "Why Yoto?",
     reviewTitle: "Check out our",
     reviewCount: "12,357 reviews",

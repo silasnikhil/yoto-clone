@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React from "react"
 import HeroSection, {
   HeroSectionProps,
 } from "../components/HeroSection/HeroSection";
@@ -23,6 +23,7 @@ import GalleryGrid, {
 } from "../components/GalleryGrid/GalleryGrid";
 import { homePageData } from "@/public/data/homepage";
 
+
 export interface HomePageProps {
   heroSection: HeroSectionProps;
   productCards: ProductCardProps[];
@@ -34,17 +35,7 @@ export interface HomePageProps {
   howTo: HowToProps;
   galleryGrid: GalleryGridInterface;
 }
-const Homepage = ({
-  heroSection,
-  productCards,
-  videoSection,
-  productDetailedCards,
-  compareBtnText,
-  stats,
-  logos,
-  howTo,
-  galleryGrid,
-}: HomePageProps) => {
+const Homepage = ({}) => {
   return (
     <Box>
       <HeroSection
@@ -52,6 +43,7 @@ const Homepage = ({
         heroTitle={homePageData.heroSection.heroTitle}
         heroSubTitle={homePageData.heroSection.heroSubTitle}
         primaryBtnText={homePageData.heroSection.primaryBtnText}
+        navigateUrl={homePageData.heroSection.navigateUrl}
         secondaryBtnText={homePageData.heroSection.secondaryBtnText}
         reviewTitle={homePageData.heroSection.reviewTitle}
         reviewCount={homePageData.heroSection.reviewCount}

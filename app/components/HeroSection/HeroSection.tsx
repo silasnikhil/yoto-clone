@@ -1,15 +1,17 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel, CarouselProps } from "../Carousel/Carousel";
 import { TiStarFullOutline } from "react-icons/ti";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { IoStar } from "react-icons/io5";
+import Link from "next/link";
 
 export interface HeroSectionProps {
   bannerUrl: string[];
   heroTitle: string;
   heroSubTitle: string;
   primaryBtnText: string;
+  navigateUrl: string;
   secondaryBtnText: string;
   reviewTitle: string;
   reviewCount: string;
@@ -19,6 +21,7 @@ const HeroSection = ({
   heroTitle,
   heroSubTitle,
   primaryBtnText,
+  navigateUrl,
   secondaryBtnText,
   reviewTitle,
   reviewCount,
@@ -50,14 +53,19 @@ const HeroSection = ({
             mt={8}
             flexDirection={{ base: "column", md: "row" }}
           >
-            <Button
-              color={"white"}
-              bg={"#F45436"}
-              width={{ base: "100%", md: 200 }}
-              boxShadow="0px 2px 12px rgba(0, 0, 0, 0.8)"
-            >
-              {primaryBtnText}
-            </Button>
+            <Link href={navigateUrl} passHref>
+              <Button
+                color={"white"}
+                bg={"#F45436"}
+                width={{ base: "100%", md: 200 }}
+                boxShadow="0px 2px 12px rgba(0, 0, 0, 0.8)"
+                _hover={{
+                  background: "#D7533B",
+                }}
+              >
+                {primaryBtnText}
+              </Button>
+            </Link>
             <Button
               color={"#1471D9"}
               variant="outline"

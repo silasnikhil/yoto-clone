@@ -116,6 +116,9 @@ export const ProductDetailedCard = ({
         boxShadow="0px 2px 12px rgba(0, 0, 0, 0.8)"
         mt={4}
         fontSize={"xl"}
+        _hover={{
+          background: "#D7533B",
+        }}
       >
         {productBtnText}
       </Button>
