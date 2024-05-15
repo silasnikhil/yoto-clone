@@ -20,6 +20,7 @@ import { LuUser2 } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { hoverStyle } from "../../utils/hoverStyle";
+import AuthModal, { AuthModalProps } from "../AuthModal/AuthModal";
 
 export interface HeaderLinks {
   headerTitle: string;
@@ -38,10 +39,17 @@ export interface HeaderInterface {
   bg: string;
   headerLinks: HeaderLinks[];
   supportLinks?: SupportLinks[];
+  authModalData: AuthModalProps;
 }
-const Header = ({ bg, headerLinks, supportLinks }: HeaderInterface) => {
+const Header = ({
+  bg,
+  headerLinks,
+  supportLinks,
+  authModalData,
+}: HeaderInterface) => {
   const mobileNav = useDisclosure();
   const dropdown = useDisclosure();
+  const authModal = useDisclosure();
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -204,10 +212,30 @@ const Header = ({ bg, headerLinks, supportLinks }: HeaderInterface) => {
                     md: "inline-flex",
                   }}
                 >
-                  <IoIosSearch color="white" size={28} />
-                  <LuUser2 color="white" size={28} />
-                  <FaRegHeart color="white" size={28} />
-                  <HiOutlineShoppingBag color="white" size={28} />
+                  <IoIosSearch
+                    color="white"
+                    size={28}
+                    cursor={"pointer"}
+                    onClick={authModal.onOpen}
+                  />
+                  <LuUser2
+                    color="white"
+                    size={28}
+                    cursor={"pointer"}
+                    onClick={authModal.onOpen}
+                  />
+                  <FaRegHeart
+                    color="white"
+                    size={28}
+                    cursor={"pointer"}
+                    onClick={authModal.onOpen}
+                  />
+                  <HiOutlineShoppingBag
+                    color="white"
+                    size={28}
+                    cursor={"pointer"}
+                    onClick={authModal.onOpen}
+                  />
                 </HStack>
                 <Slide
                   direction={mobileNav.isOpen ? "right" : "left"}
@@ -300,13 +328,43 @@ const Header = ({ bg, headerLinks, supportLinks }: HeaderInterface) => {
               md: "inline-flex",
             }}
           >
-            <IoIosSearch color="white" size={28} />
-            <LuUser2 color="white" size={28} />
-            <FaRegHeart color="white" size={28} />
-            <HiOutlineShoppingBag color="white" size={28} />
+            <IoIosSearch
+              color="white"
+              size={28}
+              cursor={"pointer"}
+              onClick={authModal.onOpen}
+            />
+            <LuUser2
+              color="white"
+              size={28}
+              cursor={"pointer"}
+              onClick={authModal.onOpen}
+            />
+            <FaRegHeart
+              color="white"
+              size={28}
+              cursor={"pointer"}
+              onClick={authModal.onOpen}
+            />
+            <HiOutlineShoppingBag
+              color="white"
+              size={28}
+              cursor={"pointer"}
+              onClick={authModal.onOpen}
+            />
           </HStack>
         </Flex>
       </chakra.header>
+      <AuthModal
+        isOpen={authModal.isOpen}
+        onClose={authModal.onClose}
+        authModalTitle={authModalData.authModalTitle}
+        authModalFirstTab={authModalData.authModalFirstTab}
+        authModalSecondTab={authModalData.authModalSecondTab}
+        authModalFirstBtnText={authModalData.authModalFirstBtnText}
+        authModalSecondBtnText={authModalData.authModalSecondBtnText}
+        authModalForgotPwdText={authModalData.authModalForgotPwdText}
+      />
     </React.Fragment>
   );
 };

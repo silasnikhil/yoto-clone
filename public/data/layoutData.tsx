@@ -298,6 +298,18 @@ export const layoutData: LayoutDataProps = {
         supportIcon: <HiMiniBellAlert size={24} color="white" />,
       },
     ],
+    authModalData: {
+      isOpen: false,
+      onClose: function (): void {
+        throw new Error("Function not implemented.");
+      },
+      authModalTitle: "Login",
+      authModalFirstTab: "Sign In",
+      authModalSecondTab: "Register",
+      authModalFirstBtnText: "Login",
+      authModalSecondBtnText: "Sign Up",
+      authModalForgotPwdText: "Don't remember your password?",
+    },
   },
   footer: {
     navLinks: [

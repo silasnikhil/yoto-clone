@@ -25,6 +25,7 @@ export default function RootLayout({
             bg={header.bg}
             headerLinks={header.headerLinks}
             supportLinks={header.supportLinks}
+            authModalData={header.authModalData}
           />
           {children}
           <Footer navLinks={footer.navLinks} legalLinks={footer.legalLinks} />
