@@ -5,6 +5,7 @@ import { MdOutlineStar } from "react-icons/md";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import Reasons, { ReasonsInterface } from "../Reasons/Reasons";
 import Features, { FeatureInterface } from "../Features/Features";
+import ProductGallery from "../ProductGallery/ProductGallery";
 
 export interface ProductListingProps {
   productTitle: string;
@@ -56,7 +57,7 @@ const ProductListing = ({
         alignItems={"center"}
         width={{ base: "100%", md: "50%" }}
       >
-        Container for Image Gallery - Create a separe component
+        <ProductGallery />
       </Box>
       <Box
         display={"flex"}

@@ -134,6 +134,7 @@ export const homePageData: HomePageProps = {
     ],
     sectionHeader: "The three steps to happy listening",
     sectionSubHeader: "That's right, it's as easy as 1, 2, 3...",
+    useAsCards: false
   },
   galleryGrid: {
     images: [

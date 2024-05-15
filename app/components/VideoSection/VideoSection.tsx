@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaRegCirclePlay } from "react-icons/fa6";
 
 export interface VideoSectionProps {
-  sectionTitle: string;
+  sectionTitle?: string;
   sectionErrorMsg: string;
   playBtnText: string;
   videoUrl: string;
@@ -32,15 +32,17 @@ const VideoSection = ({
 
   return (
     <Flex flexDirection={"column"} width="100%" position="relative">
-      <Text
-        color={"#F45436"}
-        fontSize={{ base: "3xl", md: "5xl" }}
-        fontWeight={700}
-        textAlign="center"
-        marginBottom={4}
-      >
-        {sectionTitle}
-      </Text>
+      {sectionTitle && (
+        <Text
+          color={"#F45436"}
+          fontSize={{ base: "3xl", md: "5xl" }}
+          fontWeight={700}
+          textAlign="center"
+          marginBottom={4}
+        >
+          {sectionTitle}
+        </Text>
+      )}
       <Box position="relative" width="100%">
         <video width="100%" controls ref={videoRef}>
           <source src={videoUrl} type="video/mp4" />

@@ -1,5 +1,5 @@
 "use client";
-import React from "react"
+import React from "react";
 import HeroSection, {
   HeroSectionProps,
 } from "../components/HeroSection/HeroSection";
@@ -22,7 +22,6 @@ import GalleryGrid, {
   GalleryGridInterface,
 } from "../components/GalleryGrid/GalleryGrid";
 import { homePageData } from "@/public/data/homepage";
-
 
 export interface HomePageProps {
   heroSection: HeroSectionProps;
@@ -123,6 +122,7 @@ const Homepage = ({}) => {
         instructions={homePageData.howTo.instructions}
         sectionHeader={homePageData.howTo.sectionHeader}
         sectionSubHeader={homePageData.howTo.sectionSubHeader}
+        useAsCards={homePageData.howTo.useAsCards}
       />
       <Box display={"flex"} flexDirection={"column"}>
         <GalleryGrid
