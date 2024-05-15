@@ -4,12 +4,12 @@ import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 import Lottie from "lottie-react";
 import muscial from "../../../public/assets/musical.json";
 import React from "react";
-interface StatInterface {
+export interface StatInterface {
   statImage: string;
   statDesc: string;
 }
 
-interface StatsInterface {
+export interface StatsInterface {
   statsTitle: string;
   statsbg: string;
   stats: StatInterface[];

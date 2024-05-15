@@ -1,15 +1,35 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
-import React from "react";
-import { Carousel } from "../Carousel/Carousel";
+import React, { useEffect, useState } from "react";
+import { Carousel, CarouselProps } from "../Carousel/Carousel";
 import { TiStarFullOutline } from "react-icons/ti";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { IoStar } from "react-icons/io5";
+import Link from "next/link";
 
-const HeroSection = () => {
+export interface HeroSectionProps {
+  bannerUrl: string[];
+  heroTitle: string;
+  heroSubTitle: string;
+  primaryBtnText: string;
+  navigateUrl: string;
+  secondaryBtnText: string;
+  reviewTitle: string;
+  reviewCount: string;
+}
+const HeroSection = ({
+  bannerUrl,
+  heroTitle,
+  heroSubTitle,
+  primaryBtnText,
+  navigateUrl,
+  secondaryBtnText,
+  reviewTitle,
+  reviewCount,
+}: HeroSectionProps) => {
   return (
     <Flex direction={{ base: "column", md: "row" }}>
       <Box width={{ base: "100%", md: "60%" }} bg={"white"}>
-        <Carousel />
+        <Carousel bannerUrl={bannerUrl} />
       </Box>
       <Box
         width={{ base: "100%", md: "40%" }}
@@ -21,13 +41,10 @@ const HeroSection = () => {
         p={{ base: 5, md: 20 }}
       >
         <Text fontSize={"5xl"} color={"#F45436"}>
-          Let kids lead the way
+          {heroTitle}
         </Text>
         <Box width={{ base: "100%", md: "80%" }}>
-          <Text fontSize={"xl"}>
-            Yoto Player puts kids safely in control of their listening, learning
-            and play. No ads. No microphones.
-          </Text>
+          <Text fontSize={"xl"}>{heroSubTitle}</Text>
         </Box>
         <Flex direction={"column"} gap={4} width={{ base: "100%" }}>
           <Box
@@ -36,22 +53,29 @@ const HeroSection = () => {
             mt={8}
             flexDirection={{ base: "column", md: "row" }}
           >
-            <Button
-              color={"white"}
-              bg={"#F45436"}
-              width={{ base: "100%", md: 200 }}
-              boxShadow="0px 2px 12px rgba(0, 0, 0, 0.8)"
-            >
-              Buy Player
-            </Button>
-            <Button
-              color={"#1471D9"}
-              variant="outline"
-              borderColor={"#1471D9"}
-              width={{ base: "100%", md: 200 }}
-            >
-              Why Yoto
-            </Button>
+            <Link href={navigateUrl} passHref>
+              <Button
+                color={"white"}
+                bg={"#F45436"}
+                width={{ base: "100%", md: 200 }}
+                boxShadow="0px 2px 12px rgba(0, 0, 0, 0.8)"
+                _hover={{
+                  background: "#D7533B",
+                }}
+              >
+                {primaryBtnText}
+              </Button>
+            </Link>
+            <Link href={navigateUrl} passHref>
+              <Button
+                color={"#1471D9"}
+                variant="outline"
+                borderColor={"#1471D9"}
+                width={{ base: "100%", md: 200 }}
+              >
+                {secondaryBtnText}
+              </Button>
+            </Link>
           </Box>
           <Box
             display={"flex"}
@@ -61,7 +85,7 @@ const HeroSection = () => {
             pr={{ base: 0, md: 8 }}
           >
             <Text fontSize={"lg"}>
-              Check out our <b>12,356 reviews</b>
+              {reviewTitle} <b>{reviewCount}</b>
             </Text>
             <Box display={"flex"} flexDirection={"row"}>
               <TiStarFullOutline size={28} color="#00B67A" />

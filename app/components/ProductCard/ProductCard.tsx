@@ -9,8 +9,18 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { MdOutlineStar } from "react-icons/md";
+import Link from "next/link";
 
-export const ProductCard = ({ imageUrl, productTitle }) => {
+export interface ProductCardProps {
+  imageUrl: string;
+  productTitle: string;
+  navigateUrl: string;
+}
+export const ProductCard = ({
+  imageUrl,
+  productTitle,
+  navigateUrl,
+}: ProductCardProps) => {
   return (
     <Box
       display={"flex"}
@@ -23,16 +33,18 @@ export const ProductCard = ({ imageUrl, productTitle }) => {
         textDecoration: "underline",
       }}
     >
-      <Card maxW="sm" bg={"#F5F0F0"}>
-        <CardBody>
-          <Image
-            src={imageUrl}
-            alt="Green double couch with wooden legs"
-            height={{ base: 200, md: 250 }}
-            width={{ base: 200, md: 250 }}
-          />
-        </CardBody>
-      </Card>
+      <Link href={navigateUrl} passHref>
+        <Card maxW="sm" bg={"#F5F0F0"}>
+          <CardBody>
+            <Image
+              src={imageUrl}
+              alt="Green double couch with wooden legs"
+              height={{ base: 200, md: 250 }}
+              width={{ base: 200, md: 250 }}
+            />
+          </CardBody>
+        </Card>
+      </Link>
       <Text fontSize={"2xl"} fontWeight={600}>
         {productTitle}
       </Text>
@@ -40,7 +52,7 @@ export const ProductCard = ({ imageUrl, productTitle }) => {
   );
 };
 
-interface ProductDetailsProps {
+export interface ProductDetailsProps {
   imageUrl: string;
   productTitle: string;
   productAvailability: string;
@@ -49,6 +61,7 @@ interface ProductDetailsProps {
   productRating: number;
   productReviews: string | number;
   productBtnText: string;
+  navigateUrl: string;
 }
 export const ProductDetailedCard = ({
   imageUrl,
@@ -59,6 +72,7 @@ export const ProductDetailedCard = ({
   productRating,
   productReviews,
   productBtnText,
+  navigateUrl,
 }: ProductDetailsProps) => {
   const renderRatingStars = () => {
     const maxRating = 5;
@@ -104,17 +118,22 @@ export const ProductDetailedCard = ({
         {renderRatingStars()}
         <Text fontSize={"lg"}>{productReviews}</Text>
       </Box>
-      <Button
-        color={"white"}
-        bg={"#F45436"}
-        width={{ base: "100%", md: 300 }}
-        height={{ base: 16, md: 70 }}
-        boxShadow="0px 2px 12px rgba(0, 0, 0, 0.8)"
-        mt={4}
-        fontSize={"xl"}
-      >
-        {productBtnText}
-      </Button>
+      <Link href={navigateUrl} passHref>
+        <Button
+          color={"white"}
+          bg={"#F45436"}
+          width={{ base: "100%", md: 300 }}
+          height={{ base: 16, md: 70 }}
+          boxShadow="0px 2px 12px rgba(0, 0, 0, 0.8)"
+          mt={4}
+          fontSize={"xl"}
+          _hover={{
+            background: "#D7533B",
+          }}
+        >
+          {productBtnText}
+        </Button>
+      </Link>
     </Flex>
   );
 };
