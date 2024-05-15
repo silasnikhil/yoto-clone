@@ -5,7 +5,9 @@ import { MdOutlineStar } from "react-icons/md";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import Reasons, { ReasonsInterface } from "../Reasons/Reasons";
 import Features, { FeatureInterface } from "../Features/Features";
-import ProductGallery from "../ProductGallery/ProductGallery";
+import ProductGallery, {
+  ProductImage,
+} from "../ProductGallery/ProductGallery";
 
 export interface ProductListingProps {
   productTitle: string;
@@ -19,6 +21,7 @@ export interface ProductListingProps {
   btnText: string;
   reasons: ReasonsInterface;
   features: FeatureInterface[];
+  images: ProductImage[];
 }
 const ProductListing = ({
   productTitle,
@@ -32,6 +35,7 @@ const ProductListing = ({
   btnText,
   reasons,
   features,
+  images,
 }: ProductListingProps) => {
   const renderRatingStars = () => {
     const maxRating = 5;
@@ -56,8 +60,9 @@ const ProductListing = ({
         justifyContent={"center"}
         alignItems={"center"}
         width={{ base: "100%", md: "50%" }}
+        p={{ base: 0, md: 20 }}
       >
-        <ProductGallery />
+        <ProductGallery images={images} />
       </Box>
       <Box
         display={"flex"}

@@ -31,3 +31,10 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+  .image-gallery {
+    width: 100%;
+  }
+}

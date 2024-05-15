@@ -57,6 +57,7 @@ const ProductDetailPage = () => {
         btnText={productDetailPageData.productListing.btnText}
         reasons={productDetailPageData.productListing.reasons}
         features={productDetailPageData.productListing.features}
+        images={productDetailPageData.productListing.images}
       />
       <Promo
         imgUrl={productDetailPageData.promo.imgUrl}

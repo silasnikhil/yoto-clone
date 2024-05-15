@@ -60,6 +60,32 @@ export const productDetailPageData: ProductDetailPageProps = {
         featureText: "Bluetooth enabled",
       },
     ],
+    images: [
+      {
+        original: "/assets/product2.webp",
+        thumbnail: "/assets/product2.webp",
+      },
+      {
+        original: "/assets/product1.webp",
+        thumbnail: "/assets/product1.webp",
+      },
+      {
+        original: "/assets/product3.webp",
+        thumbnail: "/assets/product3.webp",
+      },
+      {
+        original: "/assets/product4.webp",
+        thumbnail: "/assets/product4.webp",
+      },
+      {
+        original: "/assets/product5.webp",
+        thumbnail: "/assets/product5.webp",
+      },
+      {
+        original: "/assets/product6.webp",
+        thumbnail: "/assets/product6.webp",
+      },
+    ],
   },
   promo: {
     imgUrl: "/assets/promo1.avif",
