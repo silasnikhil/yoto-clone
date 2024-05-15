@@ -54,6 +54,7 @@ const Header = ({
 
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // @ts-ignore
       if (menuRef.current && !menuRef?.current?.contains(event.target)) {
         dropdown.onClose();
       }

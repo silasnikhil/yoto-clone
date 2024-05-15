@@ -19,9 +19,12 @@ const VideoSection = ({
 
   useEffect(() => {
     if (isPlaying && videoRef.current) {
+      // @ts-ignore
       videoRef.current.play();
     } else if (!isPlaying && videoRef.current) {
+      // @ts-ignore
       videoRef.current.currentTime = 24;
+      // @ts-ignore
       videoRef.current.pause();
     }
   }, [isPlaying]);
