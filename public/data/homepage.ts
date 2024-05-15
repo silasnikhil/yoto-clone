@@ -25,18 +25,22 @@ export const homePageData: HomePageProps = {
     {
       imageUrl: "/assets/product1.avif",
       productTitle: "Yoto Player",
+      navigateUrl: "/yoto-player",
     },
     {
       imageUrl: "/assets/product2.avif",
       productTitle: "Single Cards",
+      navigateUrl: "/yoto-player",
     },
     {
       imageUrl: "/assets/product3.avif",
       productTitle: "Card Packs",
+      navigateUrl: "/yoto-player",
     },
     {
       imageUrl: "/assets/product4.avif",
       productTitle: "Accessories",
+      navigateUrl: "/yoto-player",
     },
   ],
   videoSection: {
@@ -55,6 +59,7 @@ export const homePageData: HomePageProps = {
       productReviews: 480,
       productAvailability: "Limited time offer",
       productBtnText: "Buy Yoto Player",
+      navigateUrl: "/yoto-player",
     },
     {
       imageUrl: "/assets/yoto2.avif",
@@ -64,6 +69,7 @@ export const homePageData: HomePageProps = {
       productReviews: 779,
       productAvailability: "Out of Stock",
       productBtnText: "Join Waitlist",
+      navigateUrl: "/yoto-player",
     },
   ],
   compareBtnText: "Compare Player vs Mini",
@@ -134,7 +140,7 @@ export const homePageData: HomePageProps = {
     ],
     sectionHeader: "The three steps to happy listening",
     sectionSubHeader: "That's right, it's as easy as 1, 2, 3...",
-    useAsCards: false
+    useAsCards: false,
   },
   galleryGrid: {
     images: [

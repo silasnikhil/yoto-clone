@@ -53,6 +53,7 @@ const Homepage = ({}) => {
             imageUrl={card.imageUrl}
             productTitle={card.productTitle}
             key={index}
+            navigateUrl={card.navigateUrl}
           />
         ))}
       </SimpleGrid>
@@ -86,6 +87,7 @@ const Homepage = ({}) => {
                 productReviews={productCard.productReviews}
                 productAvailability={productCard.productAvailability}
                 productBtnText={productCard.productBtnText}
+                navigateUrl={productCard.navigateUrl}
               />
             </Box>
           ))}

@@ -66,14 +66,16 @@ const HeroSection = ({
                 {primaryBtnText}
               </Button>
             </Link>
-            <Button
-              color={"#1471D9"}
-              variant="outline"
-              borderColor={"#1471D9"}
-              width={{ base: "100%", md: 200 }}
-            >
-              {secondaryBtnText}
-            </Button>
+            <Link href={navigateUrl} passHref>
+              <Button
+                color={"#1471D9"}
+                variant="outline"
+                borderColor={"#1471D9"}
+                width={{ base: "100%", md: 200 }}
+              >
+                {secondaryBtnText}
+              </Button>
+            </Link>
           </Box>
           <Box
             display={"flex"}
