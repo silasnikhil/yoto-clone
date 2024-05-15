@@ -41,13 +41,14 @@ const Statement = ({
         </Text>
       </Box>
       <SimpleGrid columns={{ base: 2, md: 4 }}>
-        {statements.map((statement) => (
+        {statements.map((statement, index) => (
           <Box
             display={"flex"}
             flexDirection={"column"}
             gap={4}
             justifyContent={"center"}
             alignItems={"center"}
+            key={index}
           >
             <Image
               src={statement.imageUrl}

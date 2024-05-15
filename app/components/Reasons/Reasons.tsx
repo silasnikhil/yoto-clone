@@ -16,7 +16,7 @@ const Reasons = ({ reasonTitles, bg }: ReasonsInterface) => {
       rounded={"md"}
       p={4}
     >
-      {reasonTitles.map((reason) => (
+      {reasonTitles.map((reason, index) => (
         <Box
           display={"flex"}
           gap={2}
@@ -26,6 +26,7 @@ const Reasons = ({ reasonTitles, bg }: ReasonsInterface) => {
           _hover={{
             textDecoration: "underline",
           }}
+          key={index}
         >
           <Text>{reason}</Text>
           <Box
