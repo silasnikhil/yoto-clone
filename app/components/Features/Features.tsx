@@ -11,12 +11,13 @@ export interface FeaturesProps {
 const Features = ({ features }: FeaturesProps) => {
   return (
     <SimpleGrid columns={2} row={4} spacing={8}>
-      {features.map((feature) => (
+      {features.map((feature, index) => (
         <Box
           display={"flex"}
           justifyContent={"flex-start"}
           alignItems={"center"}
           gap={4}
+          key={index}
         >
           <Image src={feature.featureIcon} height={"32px"} width={"32px"} />
           <Text>{feature.featureText}</Text>
